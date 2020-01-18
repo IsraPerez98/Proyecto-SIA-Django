@@ -1,0 +1,23 @@
+{% extends "main/base.html" %}
+
+{% block titulo_pagina %} Subir Documento {% endblock %}
+
+{% block contenido %}
+
+{% if not user.is_authenticated %}
+
+    <h1>Para subir documentos debes <a href={% url 'account_signup' %}> crear una cuenta</a></h1>
+    <h1>Si ya tienes una cuenta puedes <a href={% url 'account_login' %}> ingresar</a></h1>
+
+{% else %}
+
+   <h2>Subir</h2>
+   <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit", name="subir_archivo">Subir</button>
+   </form>
+
+{% endif %}
+
+{% endblock %}

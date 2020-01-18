@@ -1,0 +1,19 @@
+{% extends 'main/base.html' %}
+
+{% block contenido %}
+
+{% if user.is_authenticated %}
+
+    <h1>Ya ha ingresado con su usuario</h1>
+    <h2>Puede <a href={%url 'account_logout' %}>Salir</a></h2>
+
+{% else %}
+
+{% block contenido_no_ingresado %}
+
+
+{% endblock %}
+
+{% endif %}
+
+{% endblock %}

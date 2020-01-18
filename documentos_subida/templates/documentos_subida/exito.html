@@ -1,0 +1,14 @@
+{% extends "main/base.html" %}
+
+{% block titulo_pagina %} Exito {% endblock %}
+
+{% block contenido %}
+
+<h1>
+Su documento ha sido subido con exito
+La revision puede tardar varios dias
+Recuerde que subir archivos maliciosos o que no correspondan puede resultar en el bloqueo de su cuenta
+Si lo desea puede volver a ver los <a href={% url "documentos" %}>documentos</a>
+</h1>
+
+{% endblock %}

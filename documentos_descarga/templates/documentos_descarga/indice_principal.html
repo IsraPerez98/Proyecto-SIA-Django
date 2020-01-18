@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+
+{% block titulo_pagina %}
+Ramos Disponibles
+{% endblock %}
+
+{% block contenido %}
+<h2>
+Deseas aportar con mas pautas?
+Envialas <a href={% url 'documentos_subida' %}>Aquí</a>
+</h2>
+<h1>Ramos Disponibles</h1>
+
+  <ul>
+    {% for ramo in ramos %}
+      <li><a href={{ramo.codigo}}>  {{ramo.nombre}} ({{ramo.cant_documentos}} DOCUMENTOS)</a></li>
+    {% endfor %}
+  </ul>
+
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'main/base.html' %}
+
+{% block titulo_pagina %}
+Inicio
+{% endblock %}
+
+{% block contenido %}
+<h1>Inicio</h1>
+
+<a href={% url 'documentos'%}>Documentos</a>
+<a href="usuario/signup">Registro</a>
+
+{%endblock%}

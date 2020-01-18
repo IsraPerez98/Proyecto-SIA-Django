@@ -1,0 +1,27 @@
+{% extends 'main/base.html' %}
+
+{% block titulo_pagina %}
+{{nombre_ramo}}
+{% endblock %}
+
+{% block contenido %}
+<h1>{{nombre_ramo}}</h1>
+
+    <ul>
+    {% for tipo in tipos_de_documentos %}
+        <li>
+            <h2>{{tipo.descripcion}}</h2>
+            <ul>
+                {% for documento in documentos %}
+                    {% if documento.documento.tipo == tipo %}
+                        <li>
+                            <a href={% url 'descarga' archivo=documento.documento.archivo %}>  {{documento.documento.nombre}}</a>        </li>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            <ul>
+        </li>
+    {% endfor %}
+    </ul> 
+
+{% endblock %}

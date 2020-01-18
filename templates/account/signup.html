@@ -1,0 +1,14 @@
+{% extends "account/usuario_ingresado.html" %}
+
+{% block titulo_pagina %} Crear Usuario {% endblock %}
+
+{% block contenido_no_ingresado %}
+    
+    <h2>Sign Up</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Registrar</button>
+    </form>
+
+{% endblock %}

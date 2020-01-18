@@ -1,0 +1,17 @@
+<html>
+<head>
+    <title>{% block titulo_pagina %}UTEM DDS{% endblock %}</title>
+</head>
+
+<body>
+    {% if user.is_authenticated %}
+        Hola {{ user.email }}!
+        <p><a href="{% url 'account_logout' %}">Salir</a></p>
+    {% endif %}
+    <div id="contenido", name="contenido">
+    {% block contenido %}
+
+    {% endblock %}
+    </div>
+</body>
+</html>
